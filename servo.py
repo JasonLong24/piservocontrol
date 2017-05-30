@@ -26,9 +26,10 @@ def max():
 def mid():
 	pwm.ChangeDutyCycle(7.2)
 
-def input():
-        input = input.get()
-        pwm.ChangeDutyCycle(input)
+def myinput():
+        myinput = input.get()
+        pwm.ChangeDutyCycle(float(myinput))
+	print(float(myinput))
 
 win.title("Servo Control")
 win.geometry("800x480")
@@ -37,7 +38,7 @@ Label(win, text="text")
 input = Entry(win)
 input.grid(row=0, column=1)
 
-inputbutton = Button(win, text="Set", command=input, height=10, width=15)
+inputbutton = Button(win, text="Set", command=myinput, height=10, width=15)
 inputbutton.grid(row=1, column=1)
 
 minbutton = Button(win, text="Minimum", command=min, height=10, width=15)
